@@ -1,10 +1,10 @@
 # Teste Integração
 
-![GitHub repo size](https://img.shields.io/github/repo-size/fabiojcbatista/TestesIntegracao?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/fabiojcbatista/TestesIntegracao?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/fabiojcbatista/TestesIntegracao?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/fabiojcbatista/TestesIntegracaos?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/fabiojcbatista/TestesIntegracao?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/fabiojcbatista/TesteIntegracao?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/fabiojcbatista/TesteIntegracao?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/fabiojcbatista/TesteIntegracao?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/fabiojcbatista/TesteIntegracaos?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/fabiojcbatista/TesteIntegracao?style=for-the-badge)
 
 
 ### Ajustes e melhorias

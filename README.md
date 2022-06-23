@@ -11,9 +11,9 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [] Criar before e after para testes
-- [] Testar a existência de arquivos após criação
-- [] Deletar tudo o que foi criado
+- [] Criar classes preTeste() e posTeste()
+- [] Refatorar para atender as boas praticas
+- [] Rollback dos testes
 
 ## 💻 Pré-requisitos
 

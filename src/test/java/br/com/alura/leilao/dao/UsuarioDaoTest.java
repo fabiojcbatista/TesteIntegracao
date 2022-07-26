@@ -34,13 +34,18 @@ class UsuarioDaoTest {
 		Assert.assertNotNull(encontrado);
 	}
 
-	/**
-	 * 
-	 */
 	@Test
 	void naoDeveriaEncontrarUsuarioNaoCadastrado() {
 		criarUsuario();
 		Assert.assertThrows(NoResultException.class, () -> this.dao.buscarPorUsername("beltrano"));
+	}
+
+	@Test
+	void deveriaRemoverUmUsuario() {
+		Usuario usuario = criarUsuario();
+		dao.deletar(usuario);
+
+		Assert.assertThrows(NoResultException.class, () -> this.dao.buscarPorUsername(usuario.getNome()));
 	}
 
 	private Usuario criarUsuario() {
@@ -48,4 +53,5 @@ class UsuarioDaoTest {
 		em.persist(usuario);
 		return usuario;
 	}
+
 }

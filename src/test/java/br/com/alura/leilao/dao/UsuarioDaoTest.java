@@ -10,8 +10,10 @@ import org.junit.jupiter.api.Test;
 
 import br.com.alura.leilao.model.Usuario;
 import br.com.alura.leilao.util.JPAUtil;
+import br.com.alura.leilao.util.builder.UsuarioBuilder;
 
 class UsuarioDaoTest {
+
 	private UsuarioDao dao;
 	private EntityManager em;
 
@@ -29,29 +31,44 @@ class UsuarioDaoTest {
 
 	@Test
 	void deveriaEncontrarUsuarioCadastrado() {
-		Usuario usuario = criarUsuario();
+		Usuario usuario =  new UsuarioBuilder()
+				.comNome("Fulano")
+				.comEmail("fulano@email.com")
+				.comSenha("12345678")
+				.criar();
+		
+		em.persist(usuario);
+		
 		Usuario encontrado = this.dao.buscarPorUsername(usuario.getNome());
 		Assert.assertNotNull(encontrado);
 	}
 
 	@Test
 	void naoDeveriaEncontrarUsuarioNaoCadastrado() {
-		criarUsuario();
+		Usuario usuario =  new UsuarioBuilder()
+				.comNome("Fulano")
+				.comEmail("fulano@email.com")
+				.comSenha("12345678")
+				.criar();
+		
+		em.persist(usuario);
+		
 		Assert.assertThrows(NoResultException.class, () -> this.dao.buscarPorUsername("beltrano"));
 	}
-
+	
 	@Test
 	void deveriaRemoverUmUsuario() {
-		Usuario usuario = criarUsuario();
-		dao.deletar(usuario);
-
-		Assert.assertThrows(NoResultException.class, () -> this.dao.buscarPorUsername(usuario.getNome()));
-	}
-
-	private Usuario criarUsuario() {
-		Usuario usuario = new Usuario("fulano", "fulano@email.com", "12345678");
+		Usuario usuario =  new UsuarioBuilder()
+				.comNome("Fulano")
+				.comEmail("fulano@email.com")
+				.comSenha("12345678")
+				.criar();
+		
 		em.persist(usuario);
-		return usuario;
+		
+		dao.deletar(usuario);
+		
+		Assert.assertThrows(NoResultException.class, () -> this.dao.buscarPorUsername(usuario.getNome()));
 	}
 
 }
